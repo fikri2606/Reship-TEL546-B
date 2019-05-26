@@ -1,8 +1,20 @@
+<?php include("config.php");?>
+<?php if(isset($_GET['status'])): ?>
+    <p>
+        <?php
+            if($_GET['status'] == 'sukses'){
+                echo "Pendaftaran berhasil!";
+            } else {
+                echo "Pendaftaran gagal!";
+            }
+        ?>
+    </p>
+<?php endif; ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Sign Up</title>
+    <title>Login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -32,51 +44,10 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link href="css/signup.css" rel="stylesheet" type="text/css" />
+    <link href="css/login.css" rel="stylesheet" type="text/css" />
+
     <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
-    <style>
-      #msg {
-        visibility: hidden;
-        min-width: 250px;
-        background-color:yellow;
-        color: #000;
-        text-align: center;
-        border-radius: 2px;
-        padding: 16px;
-        position: fixed;
-        z-index: 1;
-        right: 30%;
-        top: 30px;
-        font-size: 17px;
-    	  margin-right:130px;
-      }
 
-      #msg.show {
-          visibility: visible;
-          -webkit-animation: fadein 0.5s, fadeout 0.5s 1.5s;
-          animation: fadein 0.5s, fadeout 0.5s 1.5s;
-      }
-
-      @-webkit-keyframes fadein {
-          from {top: 0; opacity: 0;}
-          to {top: 30px; opacity: 1;}
-      }
-
-      @keyframes fadein {
-          from {top: 0; opacity: 0;}
-          to {top: 30px; opacity: 1;}
-      }
-
-      @-webkit-keyframes fadeout {
-          from {top: 30px; opacity: 1;}
-          to {top: 0; opacity: 0;}
-      }
-
-      @keyframes fadeout {
-          from {top: 30px; opacity: 1;}
-          to {top: 0; opacity: 0;}
-      }
-    </style>
   </head>
   <body>
     <header class="header1">
@@ -116,46 +87,26 @@
   	</header>
     <!-- form -->
     <section class="bgwhite p-t-55 p-b-65">
-      <div class="signup">
+      <div class="signin ">
         <form>
-          <h2> Register</h2>
-          <div class="inputid">
-            <br>
-            <input type="text" name="name"
-            placeholder="Name" style="margin-bottom : 10px"><br>
-            <input type="text" name="username"
-            placeholder="Username" style="margin-bottom : 10px"><br>
-            <input type="password" name="pass"
-            placeholder="Password" style="margin-bottom : 10px"><br>
-            <input type="password" name="comfpass"
-            placeholder="Confirm Password" style="margin-bottom : 10px"><br>
-            <input type="email" name="email"
-            placeholder="Email" style="margin-bottom : 10px"><br>
-            <input type="text" name="nohp"
-            placeholder="No Handphone" style="margin-bottom : 14px"><br>
-            <!-- <select style="margin-bottom:20px">
-              <optgroup label="Status">
-                <option>Ahli Kapal</option>
-                <option>Toke Kapal</option>
-              </optgroup>
-            </select><br> -->
-          </div><br><br>
-          <div class="tmbledit">
-            <a href="login.html"><input class="bo-rad-23 hov1 m-text3 trans-0-4" type="button" value="Sign up"
-            onclick="myFunction()"></a> <br> <br>
-              <div id="msg"> Congratulations!<br>you Sign up successfully</div>
-
-              <script>
-                function myFunction() {
-                    var x = document.getElementById("msg");
-                    x.className = "show";
-                    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
-                }
-              </script>
-            Already have account? <a href="login.html">&nbsp;Sign in</a>
-
+          <h2> Log In</h2>
+          <div class="formlogin">
+            <div class="inputid">
+              <br>
+              <input type="text" name="username"
+              placeholder="Username or Email"> <br>
+              <br>
+              <input type="password" name="pass"
+              placeholder="Password"> <br> <br>
+            </div>
+            <h4> Login Sebagai</h4>
+            <div class=""style="padding-top:20px;">
+              <a href="index.html"><input type="button" value="Toke BAngku" class="bo-rad-23 hov1 m-text3 trans-0-4"></a>
+              <a href="cart.html"><input type="button" value="Ahli Kapal" class="bo-rad-23 hov1 m-text3 trans-0-4"></a><br><br>
+            </div>
           </div>
-
+          <br><br><br>
+          don't have account? <a href="signup.html">&nbsp;Sign Up</a>
         </form>
       </div>
     </section>
