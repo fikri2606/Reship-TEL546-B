@@ -1,0 +1,94 @@
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url('../fonts/montserrat/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: Montserrat-Medium;
+  src: url('../fonts/montserrat/Montserrat-Medium.ttf');
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url('../fonts/montserrat/Montserrat-Bold.ttf');
+}
+
+body{
+  color: black;
+  background-color:White;
+  background-size: cover;
+}
+.signin{
+  outline: 2px solid #d9d9d9;
+  outline-offset: 25px;
+  padding: 5px;
+  width: 250px;
+  margin-left: 450px;
+}
+.inputid{
+  border-top: 1px dashed #d9d9d9;
+  border-bottom: 1px dashed #d9d9d9;
+}
+
+form{
+  width:440px;
+  text-align: center;
+  font-family: Montserrat-Regular;
+}
+
+input{
+  width: 340px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  font-family: Montserrat-Regular;
+  font-size: 14px;
+  font-weight: 200px;
+  padding: 10px 0;
+  transition: border 0.5s;
+  outline: 1px solid #e6e6e6;
+  color: #555555;
+
+}
+input[type=button]{
+  border: none;
+  font-size: 13px;
+  width: 190px;
+  background: black;
+  color: white;
+  line-height: 25px;
+
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: Montserrat-Regular;
+  text-transform: Uppercase;
+
+
+}
+input[type=button]:hover{
+  color: white;
+  background-color: #e65540;
+    transition-duration: 0.1s;
+}
+
+h2{
+  color: black;
+  padding-bottom: 20px;
+  font-family: Montserrat-Bold;
+  text-transform: uppercase;
+}
+
+
+h4{
+  color: black;
+  font-size: 14px;
+  padding-top: 20px;
+  font-family: Montserrat-Regular;
+  text-transform: lowercase;
+}
+a{
+  color: #cc0000;
+  text-decoration: blink;
+}
+a:hover{
+  color: skyblue;
