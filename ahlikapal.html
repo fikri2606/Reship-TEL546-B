@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Pesan Jasa</title>
+	<title>Ahli Kapal</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -40,11 +40,15 @@
 
 			<div class="wrap_header">
 				<!-- Logo -->
-				<a href="tokebangku.html" class="logo">
+				<a href="ahlikapal.html" class="logo">
 					<img src="images/icons/logo.png" alt="IMG-LOGO">
 				</a>
 
 				<!-- Menu -->
+				<div class="wrap_menu">
+					<nav class="menu">
+					</nav>
+				</div>
 
 				<!-- Header Icon -->
 				<div class="header-icons">
@@ -54,12 +58,17 @@
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown">
 
-
 							<div class="header-cart-buttons">
+								<div class="header-cart-wrapbtn">
+									<!-- Button -->
+									<a href="formjasa.html" class="header-cart-item-name"style="padding: 10px">
+										Edit Data Diri
+									</a>
+								</div>
 
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="index.html" class="header-cart-item-name">
+									<a href="index.html" class="header-cart-item-name"style="padding: 10px">
 										Log Out
 									</a>
 								</div>
@@ -247,45 +256,49 @@
 		</div>
 	</header>
 
+	<!-- Title Page -->
+	<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(images/heading-pages-01.jpg);">
+		<h2 class="l-text2 t-center">
+			Daftar Pemesan
+		</h2>
+	</section>
+
 	<!-- Cart -->
 	<section class="cart bgwhite p-t-70 p-b-100">
 		<div class="container">
+			<!-- Cart item -->
+			<div class="container-table-cart pos-relative">
+				<div class="wrap-table-shopping-cart bgwhite">
+					<table class="table-shopping-cart">
+						<tr class="table-head">
+							<th class="column-2"style="padding-left:30px;">Nama Pemesan</th>
+							<th class="column-1" style="padding-right:30px;">No HP</th>
+							<th class="column-6">Alamat</th>
+						</tr>
+
+						<tr class="table-row">
+							<td class="column-2" style="padding-left:30px;">mahmud</td>
+							<td class="column-1" style="padding-right:30px;">0814-2020-2020</td>
+							<td class="column-6">Jalan sutomo nomor 231 pematang raya kabupaten simalungun provinsi sumatera  utara</td>
+							<td class="" style="padding-right:30px; Width:100px;"><button class="flex-c-m size4 bg7 bo-rad-15 hov1 s-text14 trans-0-4">
+								Lihat
+							</button></td>
+						</tr>
+
+						<tr class="table-row">
+							<td class="column-2" style="padding-left:30px;">dalang</td>
+							<td class="column-1" style="padding-right:30px;">0821-1122-1122</td>
+							<td class="column-6">Pocut baren banda aceh</td>
+							<td class="" style="padding-right:30px; Width:100px;"><button class="flex-c-m size4 bg7 bo-rad-15 hov1 s-text14 trans-0-4">
+								Lihat
+							</button></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
 
 			<!-- Total -->
-			<div class="bo9 p-l-40 p-r-40 p-t-30 m-l-auto m-r-auto p-b-38 m-t-30 p-lr-15-sm w-half-full">
-				<h5 class="m-text20 p-b-24">
-					Data Pemesanan Jasa
-				</h5>
-
-				<!--  -->
-				<div class="flex-w flex-sb bo10 p-t-15 p-b-20">
-
-					<div class="w-full">
-
-						<div class="size16 w-size100 bo4 m-b-12">
-							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Nama">
-						</div>
-
-						<div class="size16 w-size100 bo4 m-b-12">
-							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Nomor Hp">
-						</div>
-
-						<div class="size16 w-size100 bo4 m-b-12">
-							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Alamat">
-						</div>
-
-						<div class="size16 w-size100 bo4 m-b-12">
-							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Deskripsi">
-						</div>
-
-					</div>
-				</div>
-
-				<!-- Button -->
-				<button class="m-l-auto m-r-auto flex-c-m size11 bg1 bo-rad-23 hov1 s-text1 trans-0-4" style="margin-top:20px">Pesan</button>
-
-			</div>
-		</div>
 	</section>
 
 
