@@ -1,3 +1,5 @@
+<?php include("config.php"); ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -117,18 +119,18 @@
     <!-- form -->
     <section class="bgwhite p-t-55 p-b-65">
       <div class="signup">
-        <form>
+        <form action="proses-pendaftaran.php" method="POST">
           <h2> Register</h2>
           <div class="inputid">
             <br>
-            <input type="text" name="name"
+            <input type="text" name="nama"
             placeholder="Name" style="margin-bottom : 10px"><br>
             <input type="text" name="username"
             placeholder="Username" style="margin-bottom : 10px"><br>
-            <input type="password" name="pass"
+            <input type="password" name="password"
             placeholder="Password" style="margin-bottom : 10px"><br>
-            <input type="password" name="comfpass"
-            placeholder="Confirm Password" style="margin-bottom : 10px"><br>
+            <!-- <input type="password" name="comfpass"
+            placeholder="Confirm Password" style="margin-bottom : 10px"><br> -->
             <input type="email" name="email"
             placeholder="Email" style="margin-bottom : 10px"><br>
             <input type="text" name="nohp"
@@ -141,17 +143,8 @@
             </select><br> -->
           </div><br><br>
           <div class="tmbledit">
-            <a href="login.html"><input class="bo-rad-23 hov1 m-text3 trans-0-4" type="button" value="Sign up"
-            onclick="myFunction()"></a> <br> <br>
-              <div id="msg"> Congratulations!<br>you Sign up successfully</div>
+            <input class="bo-rad-23 hov1 m-text3 trans-0-4" type="submit" name ="daftar" value="Sign up"> <br> <br>
 
-              <script>
-                function myFunction() {
-                    var x = document.getElementById("msg");
-                    x.className = "show";
-                    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
-                }
-              </script>
             Already have account? <a href="login.html">&nbsp;Sign in</a>
 
           </div>

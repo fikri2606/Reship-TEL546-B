@@ -1,7 +1,9 @@
+<?php include("config.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Deskripsi Ahli</title>
+	<title>Deskripsi Diri</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -39,13 +41,12 @@
 		<div class="container-menu-header">
 			<div class="wrap_header">
 				<!-- Logo -->
-				<a href="tokebangku.html" class="logo">
+				<a href="index.html" class="logo">
 					<img src="images/icons/logo.png" alt="IMG-LOGO">
 				</a>
 
 				<!-- Header Icon -->
 				<div class="header-icons">
-
 					<div class="header-wrapicon2">
 						<img src="images/icons/icon-header-01.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
 
@@ -53,16 +54,10 @@
 						<div class="header-cart header-dropdown">
 
 							<div class="header-cart-buttons">
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="cart.html" class="header-cart-item-name"style="padding: 10px">
-										Pesanan
-									</a>
-								</div>
 
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="index.html" class="header-cart-item-name"style="padding:10px">
+									<a href="index.html" class="header-cart-item-name">
 										Log Out
 									</a>
 								</div>
@@ -90,9 +85,15 @@
 				</div>
 			</div>
 
+			<?php
+			        $sql = "SELECT * FROM data_diri";
+			        $query = mysqli_query($db, $sql);
+
+			 ?>
+
 			<div class="w-size14 p-t-30 respon5">
 				<h4 class="product-detail-name m-text16 p-b-13">
-					Sumartono
+					Fikri Eka Putra
 				</h4>
 
 				<p class="s-text8 p-t-10">
@@ -131,11 +132,10 @@
 
 			</div>
 		</div>
-		<a href="pesan.html"><button class="m-l-auto m-r-auto flex-c-m size11 bg1 bo-rad-23 hov1 s-text1 trans-0-4" style="margin-top:20px">Pesan Jasa</button></a>
+		<a href="editdata.html"><button class="m-l-auto m-r-auto flex-c-m size11 bg1 bo-rad-23 hov1 s-text1 trans-0-4" style="margin-top:20px">Edit</button></a>
 
 
 		</div>
-	</div>
 
 	<!-- Footer -->
 	<footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">

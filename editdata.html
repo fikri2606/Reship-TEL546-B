@@ -118,12 +118,12 @@
     <!-- form -->
     <section class="bgwhite p-t-55 p-b-65">
       <div class="signup">
-        <form>
+        <form action="simpan-data-diri.php" enctype="multipart/form-data" method="POST">
           <h2>Data Diri</h2>
           <div class="inputid"><br>
             <input type="text" name="nama"
             placeholder="Nama" style="margin-bottom : 10px"><br>
-            <input type="text" name="deskripsi"
+            <input type="text" name="nohp"
             placeholder="Nomor Handphone" style="margin-bottom : 10px"><br>
             <input type="text" name="alamat"
             placeholder="Alamat" style="margin-bottom : 10px"><br>
@@ -134,49 +134,50 @@
           </div><br>
 
           <!-- input gambar -->
-          <div class="Neon Neon-theme-dragdropbox tmbledit">
-          <input style="z-index: 999; opacity: 0; width: 320px; height: 200px; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="files[]" id="filer_input2" multiple="multiple" type="file">
-          <div class="Neon-input-dragDrop"><div class="Neon-input-inner"><div class="Neon-input-icon"><i class="fa fa-file-image-o"></i></div><div class="Neon-input-text"><h3>Drag&amp;Drop files here</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="Neon-input-choose-btn blue">Browse Files</a></div></div>
+          <div class="form-group">
+            <label for="foto">Upload Gambar</label>
+            <input class="form-control" type="file" name="foto" required />
           </div>
+          <!-- <div class="Neon Neon-theme-dragdropbox tmbledit">
+          <input style="z-index: 999; opacity: 0; width: 320px; height: 200px; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="foto" id="filer_input2" multiple="multiple" type="file">
+          <div class="Neon-input-dragDrop"><div class="Neon-input-inner"><div class="Neon-input-icon"><i class="fa fa-file-image-o"></i></div><div class="Neon-input-text"><h3>Drag&amp;Drop files here</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="Neon-input-choose-btn blue">Browse Files</a></div></div>
+          </div> -->
 
 
         <!-- checkbox -->
         <ul class="keahlian">
-          <div class="check-keahlian">
-            <input type="checkbox" name="kategori1" value="all">
-              All
-          </div>
 
           <div class="check-keahlian">
-            <input type="checkbox" name="kategori2" value="bagian_depan">
+            <input type="checkbox" name="ahli[]" value="bagian_depan">
               Bagian Depan
           </div>
             <li class="check-keahlian">
-            <input type="checkbox" name="kategori3" value="bagian_belakang">
+            <input type="checkbox" name="ahli[]" value="bagian_belakang">
               Bagian Belakang
           </li>
             <li class="check-keahlian">
-            <input type="checkbox" name="kategori4" value="bagian_samping">
+            <input type="checkbox" name="ahli[]" value="bagian_samping">
               Bagian Samping
           </li>
             <li class="check-keahlian">
-            <input type="checkbox" name="kategori5" value="bagian_dalam">
+            <input type="checkbox" name="ahli[]" value="bagian_dalam">
               Bagian dalam
           </li>
             <li class="check-keahlian">
-            <input type="checkbox" name="kategori6" value="cuci">
+            <input type="checkbox" name="ahli[]" value="cuci">
               Cuci
           </li>
         </ul>
+        <!-- button -->
+        <div class="tmbledit">
+          <input class="bo-rad-23 hov1 m-text3 trans-0-4" type="submit" name="simpan" value="Edit"
+          onclick="myFunction()"> <br> <br>
+        </div>
         </form>
 
 
 
-        <!-- button -->
-        <div class="tmbledit">
-          <a href="formjasa.html"><input class="bo-rad-23 hov1 m-text3 trans-0-4" type="button" value="Edit"
-          onclick="myFunction()"></a> <br> <br>
-        </div>
+
 
       </div>
     </section>

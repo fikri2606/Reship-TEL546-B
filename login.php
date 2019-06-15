@@ -1,3 +1,15 @@
+<?php if(isset($_GET['status'])): ?>
+    <p>
+        <?php
+            if($_GET['status'] == 'sukses'){
+                echo "Pendaftaran siswa baru berhasil!";
+            } else {
+                echo "Pendaftaran gagal!";
+            }
+        ?>
+    </p>
+<?php endif; ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -76,25 +88,25 @@
     <!-- form -->
     <section class="bgwhite p-t-55 p-b-65">
       <div class="signin ">
-        <form>
+        <form action="proses-login.php" method="POST">
           <h2> Log In</h2>
           <div class="formlogin">
             <div class="inputid">
               <br>
-              <input type="text" name="username"
-              placeholder="Username or Email"> <br>
+              <input type="text" name="email"
+              placeholder="Email"> <br>
               <br>
-              <input type="password" name="pass"
+              <input type="password" name="password"
               placeholder="Password"> <br> <br>
             </div>
             <h4> Login Sebagai</h4>
             <div class=""style="padding-top:20px;">
-              <a href="tokebangku.html"><input type="button" value="Toke BAngku" class="bo-rad-23 hov1 m-text3 trans-0-4"></a>
-              <a href="ahlikapal.html"><input type="button" value="Ahli Kapal" class="bo-rad-23 hov1 m-text3 trans-0-4"></a><br><br>
+              <input type="submit" value="Toke Bangku" name ="masuk_Toke" class="bo-rad-23 hov1 m-text3 trans-0-4">
+              <input type="submit" value="Ahli Kapal" name ="masuk_Ahli" class="bo-rad-23 hov1 m-text3 trans-0-4"></a><br><br>
             </div>
           </div>
           <br><br><br>
-          don't have account? <a href="signup.html">&nbsp;Sign Up</a>
+          don't have account? <a href="signup.php">&nbsp;Sign Up</a>
         </form>
       </div>
     </section>

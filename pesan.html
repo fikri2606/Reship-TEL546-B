@@ -56,10 +56,15 @@
 
 
 							<div class="header-cart-buttons">
-
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="index.html" class="header-cart-item-name">
+									<a href="cart.html" class="header-cart-item-name"style="padding: 10px">
+										Pesanan
+									</a>
+								</div>
+								<div class="header-cart-wrapbtn">
+									<!-- Button -->
+									<a href="index.html" class="header-cart-item-name"style="padding:10px">
 										Log Out
 									</a>
 								</div>
@@ -274,15 +279,23 @@
 							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Alamat">
 						</div>
 
-						<div class="size16 w-size100 bo4 m-b-12">
-							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Deskripsi">
-						</div>
+						<div class="" style="display: flex">
+							<textarea class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Deskripsi">
+							</textarea>
+
+						</div><br>
+
+						<!-- input gambar -->
+	          <div class="Neon Neon-theme-dragdropbox tmbledit">
+	          <input style="z-index: 999; opacity: 0; width: 320px; height: 200px; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="files[]" id="filer_input2" multiple="multiple" type="file">
+	          <div class="Neon-input-dragDrop"><div class="Neon-input-inner"><div class="Neon-input-icon"><i class="fa fa-file-image-o"></i></div><div class="Neon-input-text"><h3>Drag&amp;Drop files here</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="Neon-input-choose-btn blue">Browse Files</a></div></div>
+	          </div>
 
 					</div>
 				</div>
 
 				<!-- Button -->
-				<button class="m-l-auto m-r-auto flex-c-m size11 bg1 bo-rad-23 hov1 s-text1 trans-0-4" style="margin-top:20px">Pesan</button>
+				<a href="cart.html"> <button class="m-l-auto m-r-auto flex-c-m size11 bg1 bo-rad-23 hov1 s-text1 trans-0-4" style="margin-top:20px">Pesan</button></a>
 
 			</div>
 		</div>
