@@ -102,7 +102,7 @@
             <h4> Login Sebagai</h4>
             <div class=""style="padding-top:20px;">
               <input type="submit" value="Toke Bangku" name ="masuk_Toke" class="bo-rad-23 hov1 m-text3 trans-0-4">
-              <input type="submit" value="Ahli Kapal" name ="masuk_Ahli" class="bo-rad-23 hov1 m-text3 trans-0-4"></a><br><br>
+              <input type="submit" value="Ahli Kapal" name ="masuk_Ahli" class="bo-rad-23 hov1 m-text3 trans-0-4"><br><br>
             </div>
           </div>
           <br><br><br>

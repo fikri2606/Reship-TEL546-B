@@ -15,7 +15,7 @@ include("config.php");
     $foto = $_FILES['foto']['name'];
     $jumlah_dipilih=count($ahli);
 
-     for ($x=0; $x<$jumlah_dipilih; $x++){
+     // for ($x=0; $x<$jumlah_dipilih; $x++){
         $sql = "INSERT INTO data_diri values ('', '$nama', '$alamat', '$pengalaman', '$deskripsi', '$ahli[$x]', '$nohp', '$foto', '')";
         $query = mysqli_query($db, $sql);
 
@@ -24,19 +24,15 @@ include("config.php");
         if( $query ) {
             // kalau berhasil alihkan ke halaman index.php dengan status=sukses
 
-            $sql2 = "SELECT * FROM data_diri WHERE nama='$nama' ";
-            $checkuser  = mysqli_query($db , $sql);
-            $hasil    = mysqli_fetch_array($checkuser);
+            // $sql2 = "SELECT * FROM data_diri WHERE nama='$nama' ";
+            // $checkuser  = mysqli_query($db , $sql);
+            // $hasil    = mysqli_fetch_array($checkuser);
 
-            echo "header('Location: formjasa.php?nama=.$hasil['nama']')";
+             header('Location: formjasa.php');
         } else {
             // kalau gagal alihkan ke halaman indek.php dengan status=gagal
             header('Location: editdata.html');
         }
-}
 
-    // } else {
-    //     die("Akses dilarang...");
-    // }
 
 ?>

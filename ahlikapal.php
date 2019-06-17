@@ -1,3 +1,6 @@
+<?php include("config.php"); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,9 +64,14 @@
 							<div class="header-cart-buttons">
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="formjasa.html" class="header-cart-item-name"style="padding: 10px">
-										Edit Data Diri
-									</a>
+									<?php
+
+									$id = $_GET['id'];
+	
+									echo "<a href='formjasa.php?id=$id'>Lihat Data Diri</a>";
+
+									?>
+
 								</div>
 
 								<div class="header-cart-wrapbtn">
@@ -277,7 +285,9 @@
 						</tr>
 
 						<tr class="table-row">
-							<td class="column-2" style="padding-left:30px;">mahmud</td>
+
+							 <td class="column-2" style="padding-left:30px;">Lala</td>
+
 							<td class="column-1" style="padding-right:30px;">0814-2020-2020</td>
 							<td class="column-6">Jalan sutomo nomor 231 pematang raya kabupaten simalungun provinsi sumatera  utara</td>
 							<td class="" style="padding-right:30px; Width:100px;"><a href="detail-pemesan.html"><button class="flex-c-m size4 bg7 bo-rad-15 hov1 s-text14 trans-0-4">

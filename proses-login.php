@@ -53,9 +53,10 @@ if(mysqli_num_rows($checkuser) == 0) {
   		</script>
   	<?php
       } else {
+          $id = $hasil['id'];
           $_SESSION['email'] = $hasil['email'];
           $_SESSION['password']= $hasil['password'];
-              header('location:ahlikapal.html');
+              header('location:ahlikapal.php?id='.$id);
       }
   }
 }

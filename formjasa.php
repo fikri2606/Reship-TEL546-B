@@ -1,4 +1,13 @@
-<?php include("config.php"); ?>
+<?php
+include("config.php");
+
+$id = $_GET['id'];
+
+$sql = "SELECT * FROM pengguna WHERE id=$id";
+$row = mysqli_query($db, $sql);
+$result = mysqli_fetch_array($row);
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -79,41 +88,51 @@
 				<div class="wrap-slick3">
 					<div class="item-slick3" data-thumb="images/thumb-item-01.jpg">
 						<div class="wrap-pic-w-h wrap-pic-h-h" style="margin-left:100px;">
-							<img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
+							<img src="foto/<?php echo $result['foto']; ?>" alt="IMG-PRODUCT">
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<?php
-			        $sql = "SELECT * FROM data_diri";
-			        $query = mysqli_query($db, $sql);
-
-			 ?>
-
 			<div class="w-size14 p-t-30 respon5">
-				<h4 class="product-detail-name m-text16 p-b-13">
-					Fikri Eka Putra
+
+
+				<h5 class="s-text8 p-t-10">
+					Nama Lengkap
+				</h5>
+
+				<h4 class="m-text19 trans-0-4">
+					<?php echo $result['nama']; ?>
 				</h4>
 
-				<p class="s-text8 p-t-10">
-					Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
-				</p> <br>
+				<h5 class="s-text8 p-t-10">
+					Alamat
+				</h5>
+
+				<h4 class="m-text19 trans-0-4">
+					<?php echo $result['alamat']; ?>
+				</h4>
+
+				<h5 class="s-text8 p-t-10">
+					Pengalaman
+				</h5>
+
+				<h4 class="m-text19 trans-0-4">
+					<?php echo $result['pengalaman']; ?>
+				</h4>
 
 				<!--  -->
-				<div class="wrap-dropdown-content bo6 p-t-15 p-b-14 active-dropdown-content">
-					<h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
-						Deskripsi
-						<i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
-						<i class="up-mark fs-12 color1 fa fa-plus" aria-hidden="true"></i>
+				<!-- <div class="wrap-dropdown-content bo6 p-t-15 p-b-14 active-dropdown-content">
+					<h5 class="s-text8 p-t-10">
+						Pengalaman
+
 					</h5>
 
 					<div class="dropdown-content dis-none p-t-15 p-b-23">
-						<p class="s-text8">
-							Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat
-						</p>
+						<h4 class="product-detail-name m-text16 p-b-13">
+						</h4>
 					</div>
-				</div>
+				</div> -->
 
 				<div class="wrap-dropdown-content bo7 p-t-15 p-b-14 active-dropdown-content">
 					<h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
