@@ -1,3 +1,14 @@
+<?php
+include("config.php");
+
+$idahli = $_GET['id'];
+
+// $sql = "SELECT * FROM pengguna WHERE id=$id";
+// $row = mysqli_query($db, $sql);
+// $result = mysqli_fetch_array($row);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,84 +102,6 @@
 					</a>
 
 					<span class="linedivide2"></span>
-
-					<div class="header-wrapicon2">
-						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti">0</span>
-
-						<!-- Header cart noti -->
-						<div class="header-cart header-dropdown">
-							<ul class="header-cart-wrapitem">
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-01.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											White Shirt With Pleat Detail Back
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $19.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-02.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Converse All Star Hi Black Canvas
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $39.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-03.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Nixon Porter Leather Watch In Tan
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $17.00
-										</span>
-									</div>
-								</li>
-							</ul>
-
-							<div class="header-cart-total">
-								Total: $75.00
-							</div>
-
-							<div class="header-cart-buttons">
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										View Cart
-									</a>
-								</div>
-
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 
 				<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
@@ -179,77 +112,6 @@
 			</div>
 		</div>
 
-		<!-- Menu Mobile -->
-		<div class="wrap-side-menu" >
-			<nav class="side-menu">
-				<ul class="main-menu">
-					<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
-						<span class="topbar-child1">
-							Free shipping for standard order over $100
-						</span>
-					</li>
-
-					<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
-						<div class="topbar-child2-mobile">
-							<span class="topbar-email">
-								fashe@example.com
-							</span>
-
-							<div class="topbar-language rs1-select2">
-								<select class="selection-1" name="time">
-									<option>USD</option>
-									<option>EUR</option>
-								</select>
-							</div>
-						</div>
-					</li>
-
-					<li class="item-topbar-mobile p-l-10">
-						<div class="topbar-social-mobile">
-							<a href="#" class="topbar-social-item fa fa-facebook"></a>
-							<a href="#" class="topbar-social-item fa fa-instagram"></a>
-							<a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
-							<a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
-							<a href="#" class="topbar-social-item fa fa-youtube-play"></a>
-						</div>
-					</li>
-
-					<li class="item-menu-mobile">
-						<a href="index.html">Home</a>
-						<ul class="sub-menu">
-							<li><a href="index.html">Homepage V1</a></li>
-							<li><a href="home-02.html">Homepage V2</a></li>
-							<li><a href="home-03.html">Homepage V3</a></li>
-						</ul>
-						<i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
-					</li>
-
-					<li class="item-menu-mobile">
-						<a href="product.html">Shop</a>
-					</li>
-
-					<li class="item-menu-mobile">
-						<a href="product.html">Sale</a>
-					</li>
-
-					<li class="item-menu-mobile">
-						<a href="cart.html">Features</a>
-					</li>
-
-					<li class="item-menu-mobile">
-						<a href="blog.html">Blog</a>
-					</li>
-
-					<li class="item-menu-mobile">
-						<a href="about.html">About</a>
-					</li>
-
-					<li class="item-menu-mobile">
-						<a href="contact.html">Contact</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
 	</header>
 
 	<!-- Cart -->
@@ -258,6 +120,7 @@
 
 			<!-- Total -->
 			<div class="bo9 p-l-40 p-r-40 p-t-30 m-l-auto m-r-auto p-b-38 m-t-30 p-lr-15-sm w-half-full">
+				<form action="simpan-pesan.php" enctype="multipart/form-data" method="POST">
 				<h5 class="m-text20 p-b-24">
 					Data Pemesanan Jasa
 				</h5>
@@ -268,35 +131,36 @@
 					<div class="w-full">
 
 						<div class="size16 w-size100 bo4 m-b-12">
-							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Nama">
+							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="nama" placeholder="Nama">
 						</div>
 
 						<div class="size16 w-size100 bo4 m-b-12">
-							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Nomor Hp">
+							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="nohp" placeholder="Nomor Hp">
 						</div>
 
 						<div class="size16 w-size100 bo4 m-b-12">
-							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Alamat">
+							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="alamat" placeholder="Alamat">
 						</div>
 
 						<div class="" style="display: flex">
-							<textarea class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Deskripsi">
+							<textarea class="sizefull s-text7 p-l-15 p-r-15" type="text" name="deskripsi" placeholder="Deskripsi">
 							</textarea>
 
 						</div><br>
 
-						<!-- input gambar -->
-	          <div class="Neon Neon-theme-dragdropbox tmbledit">
-	          <input style="z-index: 999; opacity: 0; width: 320px; height: 200px; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="files[]" id="filer_input2" multiple="multiple" type="file">
-	          <div class="Neon-input-dragDrop"><div class="Neon-input-inner"><div class="Neon-input-icon"><i class="fa fa-file-image-o"></i></div><div class="Neon-input-text"><h3>Drag&amp;Drop files here</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="Neon-input-choose-btn blue">Browse Files</a></div></div>
-	          </div>
+						 <!-- input gambar -->
+						 <div class="form-group">
+							<label for="foto">Upload Gambar</label>
+							<input class="form-control" type="file" name="foto" required />
+						</div><br><br>
 
 					</div>
 				</div>
-
-				<!-- Button -->
-				<a href="cart.html"> <button class="m-l-auto m-r-auto flex-c-m size11 bg1 bo-rad-23 hov1 s-text1 trans-0-4" style="margin-top:20px">Pesan</button></a>
-
+					<div class="tmbledit" >
+						<input class="bo-rad-23 bg4 hov1 m-text3 trans-0-4" type="submit" name="kirim" value="KIRIM"
+						onclick="myFunction()"> <br> <br>
+					</div>
+				</form>
 			</div>
 		</div>
 	</section>
