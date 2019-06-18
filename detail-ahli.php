@@ -1,3 +1,14 @@
+<?php
+include("config.php");
+
+$id = $_GET['id'];
+
+$sql = "SELECT * FROM pengguna WHERE id=$id";
+$row = mysqli_query($db, $sql);
+$result = mysqli_fetch_array($row);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,48 +95,73 @@
 				<div class="wrap-slick3">
 					<div class="item-slick3" data-thumb="images/thumb-item-01.jpg">
 						<div class="wrap-pic-w-h wrap-pic-h-h" style="margin-left:100px;">
-							<img src="images/product-detail-01.jpg" alt="IMG-PRODUCT">
+							<img src="foto/<?php echo $result['foto']; ?>" alt="IMG-PRODUCT">
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="w-size14 p-t-30 respon5">
-				<h4 class="product-detail-name m-text16 p-b-13">
-					Sumartono
+
+
+				<h5 class="s-text8 p-t-10">
+					Nama Lengkap
+				</h5>
+
+				<h4 class="m-text19 trans-0-4">
+					<?php echo $result['nama']; ?>
 				</h4>
 
-				<p class="s-text8 p-t-10">
-					Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
-				</p> <br>
+				<h5 class="s-text8 p-t-10">
+					No HP
+				</h5>
+
+				<h4 class="m-text19 trans-0-4">
+					<?php echo $result['nohp']; ?>
+				</h4>
+
+				<h5 class="s-text8 p-t-10">
+					Alamat
+				</h5>
+
+				<h4 class="m-text19 trans-0-4">
+					<?php echo $result['alamat']; ?>
+				</h4>
+
+				<h5 class="s-text8 p-t-10">
+					Pengalaman
+				</h5>
+
+				<h4 class="m-text19 trans-0-4">
+						<?php echo $result['pengalaman']; ?>
+				</h4>
 
 				<!--  -->
-				<div class="wrap-dropdown-content bo6 p-t-15 p-b-14 active-dropdown-content">
-					<h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
-						Deskripsi
-						<i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
-						<i class="up-mark fs-12 color1 fa fa-plus" aria-hidden="true"></i>
+				<!-- <div class="wrap-dropdown-content bo6 p-t-15 p-b-14 active-dropdown-content">
+					<h5 class="s-text8 p-t-10">
+						Pengalaman
+
 					</h5>
 
 					<div class="dropdown-content dis-none p-t-15 p-b-23">
-						<p class="s-text8">
-							Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat
-						</p>
+						<h4 class="product-detail-name m-text16 p-b-13">
+						</h4>
 					</div>
-				</div>
+				</div> -->
 
 				<div class="wrap-dropdown-content bo7 p-t-15 p-b-14 active-dropdown-content">
-					<h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
+					<h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer s-text8 p-t-10 color0-hov trans-0-4">
 						Informasi Keahlian
 						<i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
 						<i class="up-mark fs-12 color1 fa fa-plus" aria-hidden="true"></i>
 					</h5>
 
 					<div class="dropdown-content dis-none p-t-15 p-b-23">
-						<li><p class="s-text8">Bagian depan</p></li>
-						<li><p class="s-text8">Bagian belakang</p></li>
-						<li><p class="s-text8">Bagian luar</p></li>
-						<li><p class="s-text8">Bagian dalam</p></li>
+						<li><p class="m-text19 trans-0-4"><?php echo $result['ahlidepan']; ?></p></li>
+						<li><p class="m-text19 trans-0-4"><?php echo $result['ahlibelakang']; ?></p></li>
+						<li><p class="m-text19 trans-0-4"><?php echo $result['ahlisamping']; ?></p></li>
+						<li><p class="m-text19 trans-0-4"><?php echo $result['ahlidalam']; ?></p></li>
+						<li><p class="m-text19 trans-0-4"><?php echo $result['cuci']; ?></p></li>
 					</div>
 				</div>
 
@@ -139,165 +175,6 @@
 
 	<!-- Footer -->
 	<footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">
-		<div class="flex-w p-b-90">
-			<div class="w-size6 p-t-30 p-l-15 p-r-15 respon3">
-				<h4 class="s-text12 p-b-30">
-					GET IN TOUCH
-				</h4>
-
-				<div>
-					<p class="s-text7 w-size27">
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
-					</p>
-
-					<div class="flex-m p-t-30">
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-facebook"></a>
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-instagram"></a>
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-pinterest-p"></a>
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-snapchat-ghost"></a>
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-youtube-play"></a>
-					</div>
-				</div>
-			</div>
-
-			<div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
-				<h4 class="s-text12 p-b-30">
-					Categories
-				</h4>
-
-				<ul>
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Men
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Women
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Dresses
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Sunglasses
-						</a>
-					</li>
-				</ul>
-			</div>
-
-			<div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
-				<h4 class="s-text12 p-b-30">
-					Links
-				</h4>
-
-				<ul>
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Search
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							About Us
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Contact Us
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Returns
-						</a>
-					</li>
-				</ul>
-			</div>
-
-			<div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
-				<h4 class="s-text12 p-b-30">
-					Help
-				</h4>
-
-				<ul>
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Track Order
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Returns
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Shipping
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							FAQs
-						</a>
-					</li>
-				</ul>
-			</div>
-
-			<div class="w-size8 p-t-30 p-l-15 p-r-15 respon3">
-				<h4 class="s-text12 p-b-30">
-					Newsletter
-				</h4>
-
-				<form>
-					<div class="effect1 w-size9">
-						<input class="s-text7 bg6 w-full p-b-5" type="text" name="email" placeholder="email@example.com">
-						<span class="effect1-line"></span>
-					</div>
-
-					<div class="w-size2 p-t-20">
-						<!-- Button -->
-						<button class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
-							Subscribe
-						</button>
-					</div>
-
-				</form>
-			</div>
-		</div>
-
-		<div class="t-center p-l-15 p-r-15">
-			<a href="#">
-				<img class="h-size2" src="images/icons/paypal.png" alt="IMG-PAYPAL">
-			</a>
-
-			<a href="#">
-				<img class="h-size2" src="images/icons/visa.png" alt="IMG-VISA">
-			</a>
-
-			<a href="#">
-				<img class="h-size2" src="images/icons/mastercard.png" alt="IMG-MASTERCARD">
-			</a>
-
-			<a href="#">
-				<img class="h-size2" src="images/icons/express.png" alt="IMG-EXPRESS">
-			</a>
-
-			<a href="#">
-				<img class="h-size2" src="images/icons/discover.png" alt="IMG-DISCOVER">
-			</a>
 
 			<div class="t-center s-text8 p-t-20">
 				Copyright © 2018 All rights reserved. | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>

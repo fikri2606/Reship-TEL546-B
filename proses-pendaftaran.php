@@ -7,13 +7,13 @@ if(isset($_POST['daftar'])){
 
     // ambil data dari formulir
     $nama = $_POST['nama'];
-    $username = $_POST['username'];
     $password = $_POST['password'];
     $email  = $_POST['email'];
     $nohp = $_POST['nohp'];
+    $status = $_POST['status'];
 
     // buat query
-    $sql = "INSERT INTO pengguna (nama, username, password, email, nohp) VALUE ('$nama', '$username', '$password', '$email', '$nohp')";
+    $sql = "INSERT INTO pengguna (nama, password, email, nohp, status) VALUE ('$nama', '$password', '$email', '$nohp', '$status')";
     $query = mysqli_query($db, $sql);
 
     // apakah query simpan berhasil?
