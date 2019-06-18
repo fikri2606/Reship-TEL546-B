@@ -3,7 +3,7 @@
 include("config.php");
 
 // cek apakah tombol daftar sudah diklik atau blum?
-if(isset($_POST['terima'])){
+// if(isset($_POST['terima'])){
 
     // ambil data dari formulir
     $idpesan = $_GET['idpesan'];
@@ -25,7 +25,7 @@ if(isset($_POST['terima'])){
             // kalau gagal alihkan ke halaman indek.php dengan status=gagal
             header('Location: terimatolak.php');
         }
-}
+// }
 
 
 ?>

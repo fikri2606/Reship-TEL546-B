@@ -7,8 +7,6 @@ $sql = "SELECT * FROM pemesanan WHERE idpesan=$id";
 $row = mysqli_query($db, $sql);
 $result = mysqli_fetch_array($row);
 
-$idpesan= $result['idpesan'];
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,7 +96,6 @@ $idpesan= $result['idpesan'];
 
 
 	<!-- Product Detail -->
-	<form action="tolakterima.php" method="POST">
 	<div class="container bgwhite p-t-35 p-b-80">
 		<div class="flex-w flex-sb" style="justify-content: center">
 
@@ -163,15 +160,16 @@ $idpesan= $result['idpesan'];
 			</div>
 		</div>
 
-		<div class=""style="padding-top:20px;">
-			<input type="submit" value="Terima" name ="terima" class="bo-rad-23 bg4 hov1 m-text3 trans-0-4">
-			<input type="submit" value="Tolak" name ="tolak" class="bo-rad-23 bg4 hov1 m-text3 trans-0-4"><br><br>
+
+		<div class="flex-c">
+			<?php
+				echo "<a href='tolakterima.php?idpesan=".$result['idpesan']."'><button class='m-l-auto m-r-auto  size11 bg1 bo-rad-23 hov1 s-text1 trans-0-4' style='margin-top:20px;  padding:20px'>Terima</button></a>";
+				echo "<a href='tolakterima.php?idpesan=".$result['idpesan']."'><button class='m-l-auto m-r-auto  size11 bg1 bo-rad-23 hov1 s-text1 trans-0-4' style='margin-top:20px; padding:20px'>Tolak</button></a>";
+			?>
 		</div>
 
-</div>
-
 		</div>
-</form>
+
 
 	<!-- Footer -->
 	<footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">
