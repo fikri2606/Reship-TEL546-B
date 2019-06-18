@@ -25,6 +25,7 @@ if(isset($_POST['masuk_Toke'])){
   		</script>
   	<?php
   } else{
+          $_SESSION['id'] = $hasil['id'];
           $_SESSION['email'] = $hasil['email'];
           $_SESSION['password']= $hasil['password'];
               header('location:tokebangku.php');

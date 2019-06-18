@@ -5,29 +5,26 @@ include("config.php");
 // cek apakah tombol daftar sudah diklik atau blum?
 if(isset($_POST['kirim'])){
 
-    
+
     // ambil data dari formulir
     $idahli = $_POST['idahli'];
-    $nama = $_POST['nama'];
-    $nohp  = $_POST['nohp'];
+    $namatoke = $_POST['namatoke'];
+    $nohptoke  = $_POST['nohptoke'];
     $alamat = $_POST['alamat'];
     $deskripsi = $_POST['deskripsi'];
-    $foto = $_FILES['foto']['name'];
-    $status = "Menunggu";
+    $fototoke = $_FILES['fototoke']['name'];
+    $statuspesan = "Menunggu";
     // $status = $_POST['status'];
 
 
     // buat query
-    $sql = "INSERT INTO pemesanan (idahli, nama, nohp, alamat, deskripsi, foto, status) VALUE ('$idahli', '$nama', '$nohp', '$alamat', '$deskripsi', '$foto', '$status')";
+    $sql = "INSERT INTO pemesanan (idahli, namatoke, nohptoke, alamat, deskripsi, fototoke, statuspesan) VALUE ('$idahli', '$namatoke', '$nohp', '$alamat', '$deskripsi', '$fototoke', '$statuspesan')";
     $query = mysqli_query($db, $sql);
 
     // apakah query simpan berhasil?
     if( $query ) {
-        $sql2      =  "SELECT * FROM pemesanan WHERE idahli = '$idahli'";
-        $checkid  = mysqli_query($db , $sql2);
-        $hasil    = mysqli_fetch_array($checkid);
-        $id = $hasil['idahli'];
-        header('Location: cart.php?id='.$id);
+
+        header('Location: cart.php');
     } else {
         // kalau gagal alihkan ke halaman indek.php dengan status=gagal
         header('Location: pesan.php');

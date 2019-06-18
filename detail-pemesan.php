@@ -1,3 +1,15 @@
+<?php
+include("config.php");
+
+$id = $_GET['id'];
+
+$sql = "SELECT * FROM pemesanan WHERE idpesan=$id";
+$row = mysqli_query($db, $sql);
+$result = mysqli_fetch_array($row);
+
+$idpesan= $result['idpesan'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,13 +98,14 @@
 
 
 	<!-- Product Detail -->
+	<form action="tolakterima.php" method="POST">
 	<div class="container bgwhite p-t-35 p-b-80">
 		<div class="flex-w flex-sb" style="justify-content: center">
 
 
 			<div class="w-size14 p-t-30 respon5">
 				<h4 class="product-detail-name m-text16 p-b-13">
-					Mahmud
+					<?php echo $result['namatoke']; ?>
 				</h4> <br>
 
 				<!--  -->
@@ -105,7 +118,7 @@
 
 					<div class="dropdown-content dis-none p-t-15 p-b-23">
 						<p class="s-text8">
-							0814-2020-2020
+						<?php echo $result['nohptoke']; ?>
 						</p>
 					</div>
 				</div>
@@ -119,7 +132,7 @@
 
 					<div class="dropdown-content dis-none p-t-15 p-b-23">
 						<p class="s-text8">
-							Jalan sutomo nomor 231 pematang raya kabupaten simalungun provinsi sumatera utara
+							<?php echo $result['alamat']; ?>
 						</p>
 					</div>
 				</div>
@@ -133,30 +146,32 @@
 
 					<div class="dropdown-content dis-none p-t-15 p-b-23">
 						<p class="s-text8">
-							saya punya masalah dengan kapal saya, bagian sampingnya terkena karang menyebabkan ada kebocoran
+							<?php echo $result['deskripsi']; ?>
 						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="w-size13 respon5" style="margin-left:100px">
-			<div class="wrap-slick3">
-				<div class="item-slick3" data-thumb="images/thumb-item-01.jpg">
-					<div class="wrap-pic-w-h wrap-pic-h-h" ><br>
-						<img src="images/item-rusak-01.jpg" alt="IMG-PRODUCT" >
+		<div class="w-size13 respon5 center" style="margin-left:450px; text-align:center;">
+			<div class="wrap-slick3 center">
+				<div class="item-slick3 center" data-thumb="images/thumb-item-01.jpg">
+					<div class="wrap-pic-w-h wrap-pic-h-h center" style="position: center; width: 280px; height: 360px; padding-left: 10px; padding-right:10px"><br>
+						<img src="foto/<?php echo $result['fototoke']; ?>" alt="IMG-PRODUCT" >
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="flex-c">
-			<a href="ahlikapal.html" style="padding:20px"><button class="m-l-auto m-r-auto  size11 bg1 bo-rad-23 hov1 s-text1 trans-0-4" style="margin-top:20px">Terima</button></a>
-			<a href="ahlikapal.html" style="padding:20px"><button class="m-l-auto m-r-auto  size11 bg1 bo-rad-23 hov1 s-text1 trans-0-4" style="margin-top:20px">Tolak</button></a>
+		<div class=""style="padding-top:20px;">
+			<input type="submit" value="Terima" name ="terima" class="bo-rad-23 bg4 hov1 m-text3 trans-0-4">
+			<input type="submit" value="Tolak" name ="tolak" class="bo-rad-23 bg4 hov1 m-text3 trans-0-4"><br><br>
 		</div>
 
-		</div>
+</div>
 
+		</div>
+</form>
 
 	<!-- Footer -->
 	<footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">

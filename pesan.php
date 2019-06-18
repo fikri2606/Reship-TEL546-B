@@ -131,19 +131,19 @@ $idahli = $_GET['id'];
 					<div class="w-full">
 
 						<div class="size16 w-size100 bo4 m-b-12">
-							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="nama" placeholder="Nama">
+							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="namatoke" placeholder="Nama" required>
 						</div>
 
 						<div class="size16 w-size100 bo4 m-b-12">
-							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="nohp" placeholder="Nomor Hp">
+							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="nohptoke" placeholder="Nomor Hp" required>
 						</div>
 
 						<div class="size16 w-size100 bo4 m-b-12">
-							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="alamat" placeholder="Alamat">
+							<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="alamat" placeholder="Alamat" required>
 						</div>
 
 						<div class="" style="display: flex">
-							<textarea class="sizefull s-text7 p-l-15 p-r-15" type="text" name="deskripsi" placeholder="Deskripsi">
+							<textarea class="sizefull s-text7 p-l-15 p-r-15" type="text" name="deskripsi" placeholder="Deskripsi" required>
 							</textarea>
 
 						</div><br>
@@ -151,7 +151,7 @@ $idahli = $_GET['id'];
 						 <!-- input gambar -->
 						 <div class="form-group">
 							<label for="foto">Upload Gambar</label>
-							<input class="form-control" type="file" name="foto" required />
+							<input class="form-control" type="file" name="fototoke" required />
 						</div><br><br>
 
 					</div>

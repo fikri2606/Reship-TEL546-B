@@ -1,3 +1,9 @@
+<?php
+
+include("config.php");
+
+?>
+
  <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -272,17 +278,23 @@
 							<th class="column-5">Status</th>
 						</tr>
 
+            <?php
 
-						<tr class="table-row">
-							<td class="column-1">
-								<div class="cart-img-product b-rad-4 o-f-hidden">
-									<img src="images/item-02.jpg" alt="IMG-PRODUCT">
-								</div>
-							</td>
-							<td class="column-2">Sumartono</td>
-							<td class="column-5">0821-4444-4444</td>
-							<td class="column-5">Waiting</td>
-						</tr>
+            $sql = "SELECT idahli, statuspesan, foto, nama, nohp FROM pemesanan JOIN pengguna WHERE idahli=id";
+            $row = mysqli_query($db, $sql);
+            while($result = mysqli_fetch_array($row)) {
+						echo"<tr class='table-row'>
+							<td class='column-1'>
+								<div class='cart-img-product b-rad-4 o-f-hidden'>";
+									echo "<img src='foto/".$result['foto']."' alt='IMG-Ahli'>";
+								echo"</div>
+							</td>";
+							echo"<td class='column-2'>".$result['nama']."</td>";
+							echo"<td class='column-5'>".$result['nohp']."</td>";
+							echo"<td class='column-5'>".$result['statuspesan']."</td>";
+						echo"</tr>";
+          }
+          ?>
 					</table>
 				</div>
 			</div>

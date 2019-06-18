@@ -210,6 +210,7 @@ include("config.php");
 					<!-- Product -->
 					<div class="row">
 						<?php
+						
 							$sql = "SELECT * FROM pengguna WHERE status='ahlikapal'";
 							$query = mysqli_query($db, $sql);
 
@@ -222,6 +223,10 @@ include("config.php");
 											echo "<div class='block2-overlay trans-0-4'>
 
 												<div class='block2-btn-addcart w-size1 trans-0-4'>";
+												// echo "<a href='detail-ahli.php?id=".$result['id']."+idtoke=".$idtoke."'>	<button class='flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4'>
+												// 			Preview
+												// 		</button></a>";
+
 												echo "<a href='detail-ahli.php?id=".$result['id']."'>	<button class='flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4'>
 															Preview
 														</button></a>";

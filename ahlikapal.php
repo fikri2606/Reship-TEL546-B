@@ -289,27 +289,24 @@
 							<th class="column-7">Status</th>
 						</tr>
 
-						<tr class="table-row">
+						<?php
+						$id = $_GET['id'];
+            $sql = "SELECT * FROM pemesanan WHERE idahli=$id";
+            $row = mysqli_query($db, $sql);
+            while($result = mysqli_fetch_array($row)) {
+						echo"<tr class='table-row'>";
 
-							 <td class="column-2" style="padding-left:30px;">Lala</td>
+							 echo"<td class='column-2' style='padding-left:30px;'>".$result['namatoke']."</td>";
 
-							<td class="column-1" style="padding-right:30px;">0814-2020-2020</td>
-							<td class="column-6">Jalan sutomo nomor 231 pematang raya kabupaten simalungun provinsi sumatera  utara</td>
-							<td class="column-7" >Waiting</td>
-							<td class="" style="padding-right:30px; Width:150px;"><a href="detail-pemesan.html"><button class="flex-c-m size4 bg7 bo-rad-15 hov1 s-text14 trans-0-4">
+							echo"<td class='column-1' style='padding-right:30px;'>".$result['nohptoke']."</td>";
+							echo"<td class='column-6'>".$result['alamat']."</td>";
+							echo"<td class='column-7'>".$result['statuspesan']."</td>";
+							echo"<td style='padding-right:30px; Width:150px;'><a href='detail-pemesan.php?id=".$result['idpesan']."'><button class='flex-c-m size4 bg7 bo-rad-15 hov1 s-text14 trans-0-4'>
 								Lihat
-							</button></a></td>
-						</tr>
-
-						<tr class="table-row">
-							<td class="column-2" style="padding-left:30px;">dalang</td>
-							<td class="column-1" style="padding-right:30px;">0821-1122-1122</td>
-							<td class="column-6">Pocut baren banda aceh</td>
-							<td class="column-7">Waiting</td>
-							<td class="" style="padding-right:30px; Width:150px;"><a href="detail-pemesan.html"><button class="flex-c-m size4 bg7 bo-rad-15 hov1 s-text14 trans-0-4">
-								Lihat
-							</button></a></td>
-						</tr>
+							</button></a></td>";
+						echo"</tr>";
+					}
+					?>
 					</table>
 				</div>
 			</div>
