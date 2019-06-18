@@ -1,3 +1,14 @@
+<?php
+include("config.php");
+
+$id = $_GET['id'];
+
+$sql = "SELECT * FROM pengguna WHERE id=$id";
+$row = mysqli_query($db, $sql);
+$result = mysqli_fetch_array($row);
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -84,10 +95,13 @@
 
   			<div class="wrap_header">
   				<!-- Logo -->
-  				<a href="ahlikapal.html" class="logo">
-  					<img src="images/icons/logo.png" alt="IMG-LOGO">
-  				</a>
+          <?php
 
+  				$id = $_GET['id'];
+
+  				echo "<a href='ahlikapal.php?id=$id' class='logo'><img src='images/icons/logo.png' alt='IMG-LOGO'></a>";
+
+  				?>
   				<!-- Menu -->
 
   				<!-- Header Icon -->
@@ -118,242 +132,80 @@
     <!-- form -->
     <section class="bgwhite p-t-55 p-b-65">
       <div class="signup">
-        <form>
+        <form action="simpan-data-diri.php" enctype="multipart/form-data" method="POST">
           <h2>Data Diri</h2>
           <div class="inputid"><br>
+            <input type="text" name="id"
+            value=<?php echo $result['id']; ?> style="margin-bottom : 10px" disabled><br>
             <input type="text" name="nama"
-            placeholder="Nama" style="margin-bottom : 10px"><br>
-            <input type="text" name="deskripsi"
-            placeholder="Nomor Handphone" style="margin-bottom : 10px"><br>
+            value=<?php echo $result['nama']; ?> style="margin-bottom : 10px"><br>
+            <input type="text" name="nohp"
+            value=<?php echo $result['nohp']; ?> style="margin-bottom : 10px"><br>
             <input type="text" name="alamat"
-            placeholder="Alamat" style="margin-bottom : 10px"><br>
+            value=<?php echo $result['alamat']; ?> style="margin-bottom : 10px"><br>
             <input type="text" name="pengalaman"
-            placeholder="Pengalaman Bekerja" style="margin-bottom : 10px"><br>
-            <input type="text" name="deskripsi"
-            placeholder="Deskripsi Diri" style="margin-bottom : 20px"><br>
+            value=<?php echo $result['pengalaman']; ?> style="margin-bottom : 10px"><br>
           </div><br>
 
           <!-- input gambar -->
-          <div class="Neon Neon-theme-dragdropbox tmbledit">
-          <input style="z-index: 999; opacity: 0; width: 320px; height: 200px; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="files[]" id="filer_input2" multiple="multiple" type="file">
+          <div class="form-group">
+            <label for="foto">Upload Gambar</label>
+            <input class="form-control" type="file" name="foto" required />
+          </div><br><br>
+          <!-- <div class="Neon Neon-theme-dragdropbox tmbledit">
+          <input style="z-index: 999; opacity: 0; width: 320px; height: 200px; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="foto" id="filer_input2" multiple="multiple" type="file">
           <div class="Neon-input-dragDrop"><div class="Neon-input-inner"><div class="Neon-input-icon"><i class="fa fa-file-image-o"></i></div><div class="Neon-input-text"><h3>Drag&amp;Drop files here</h3> <span style="display:inline-block; margin: 15px 0">or</span></div><a class="Neon-input-choose-btn blue">Browse Files</a></div></div>
-          </div>
+          </div> -->
 
 
         <!-- checkbox -->
-        <ul class="keahlian">
-          <div class="check-keahlian">
-            <input type="checkbox" name="kategori1" value="all">
-              All
-          </div>
+        <div class="inputid">
 
-          <div class="check-keahlian">
-            <input type="checkbox" name="kategori2" value="bagian_depan">
-              Bagian Depan
-          </div>
-            <li class="check-keahlian">
-            <input type="checkbox" name="kategori3" value="bagian_belakang">
-              Bagian Belakang
-          </li>
-            <li class="check-keahlian">
-            <input type="checkbox" name="kategori4" value="bagian_samping">
-              Bagian Samping
-          </li>
-            <li class="check-keahlian">
-            <input type="checkbox" name="kategori5" value="bagian_dalam">
-              Bagian dalam
-          </li>
-            <li class="check-keahlian">
-            <input type="checkbox" name="kategori6" value="cuci">
-              Cuci
-          </li>
-        </ul>
+          <fieldset id="ahli1">
+            <label for="depan">Bagian Depan</label><br>
+            <input type="radio" name="ahlidepan" value="Bagian Depan" style="width:40px">Ya
+            <input type="radio" name="ahlidepan" value=""style="width:40px">Tidak
+          </fieldset><br>
+
+          <fieldset id="ahli2">
+              <label for="blkg">Bagian Belakang</label><br>
+              <input type="radio" name="ahlibelakang" value="Bagian Belakang"style="width:40px">Ya
+              <input type="radio" name="ahlibelakang" value=""style="width:40px">Tidak
+            </fieldset><br>
+          <fieldset id="ahli3">
+              <label for="samping">Bagian Samping</label><br>
+              <input type="radio" name="ahlisamping" value="Bagian Samping"style="width:40px">Ya
+              <input type="radio" name="ahlisamping" value=""style="width:40px">Tidak
+            </fieldset><br>
+          <fieldset id="ahli4">
+              <label for="bagiandepan">Bagian Dalam</label><br>
+              <input type="radio" name="ahlidalam" value="Bagian Dalam"style="width:40px">Ya
+              <input type="radio" name="ahlidalam" value=""style="width:40px">Tidak
+            </fieldset> <br>
+          <fieldset id="ahli5">
+              <label for="bagiandepan">Cuci</label><br>
+              <input type="radio" name="cuci" value="Bagian Depan"style="width:40px">Ya
+              <input type="radio" name="cuci" value=""style="width:40px">Tidak
+            </fieldset>
+        </div><br><br>
+        <br>
+        <!-- button -->
+        <div class="tmbledit" >
+          <input class="bo-rad-23 bg4 hov1 m-text3 trans-0-4" type="submit" name="simpan" value="SIMPAN"
+          onclick="myFunction()"> <br> <br>
+        </div>
         </form>
 
 
 
-        <!-- button -->
-        <div class="tmbledit">
-          <a href="formjasa.html"><input class="bo-rad-23 hov1 m-text3 trans-0-4" type="button" value="Edit"
-          onclick="myFunction()"></a> <br> <br>
-        </div>
+
 
       </div>
     </section>
     <!-- footer -->
     <footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">
-      <div class="flex-w p-b-90">
-        <div class="w-size6 p-t-30 p-l-15 p-r-15 respon3">
-          <h4 class="s-text12 p-b-30">
-            GET IN TOUCH
-          </h4>
-
-          <div>
-            <p class="s-text7 w-size27">
-              Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
-            </p>
-
-            <div class="flex-m p-t-30">
-              <a href="#" class="fs-18 color1 p-r-20 fa fa-facebook"></a>
-              <a href="#" class="fs-18 color1 p-r-20 fa fa-instagram"></a>
-              <a href="#" class="fs-18 color1 p-r-20 fa fa-pinterest-p"></a>
-              <a href="#" class="fs-18 color1 p-r-20 fa fa-snapchat-ghost"></a>
-              <a href="#" class="fs-18 color1 p-r-20 fa fa-youtube-play"></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
-          <h4 class="s-text12 p-b-30">
-            Categories
-          </h4>
-
-          <ul>
-            <li class="p-b-9">
-              <a href="#" class="s-text7">
-                All
-              </a>
-            </li>
-
-            <li class="p-b-9">
-              <a href="#" class="s-text7">
-                Bagian Depan
-              </a>
-            </li>
-
-            <li class="p-b-9">
-              <a href="#" class="s-text7">
-                Bagian Belakang
-              </a>
-            </li>
-
-            <li class="p-b-9">
-              <a href="#" class="s-text7">
-                Bagian Samping
-              </a>
-            </li>
-
-            <li class="p-b-9">
-              <a href="#" class="s-text7">
-                Bagian Dalam
-              </a>
-            </li>
-
-            <li class="p-b-9">
-              <a href="#" class="s-text7">
-                Cuci
-              </a>
-            </li>
-
-          </ul>
-        </div>
-
-        <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
-          <h4 class="s-text12 p-b-30">
-            Links
-          </h4>
-
-          <ul>
-            <li class="p-b-9">
-              <a href="#" class="s-text7">
-                Search
-              </a>
-            </li>
-
-            <li class="p-b-9">
-              <a href="#" class="s-text7">
-                About Us
-              </a>
-            </li>
-
-            <li class="p-b-9">
-              <a href="#" class="s-text7">
-                Contact Us
-              </a>
-            </li>
-
-            <li class="p-b-9">
-              <a href="#" class="s-text7">
-                Returns
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
-          <h4 class="s-text12 p-b-30">
-            Help
-          </h4>
-
-          <ul>
-            <li class="p-b-9">
-              <a href="#" class="s-text7">
-                Track Order
-              </a>
-            </li>
-
-            <li class="p-b-9">
-              <a href="#" class="s-text7">
-                Returns
-              </a>
-            </li>
-
-            <li class="p-b-9">
-              <a href="#" class="s-text7">
-                Shipping
-              </a>
-            </li>
-
-            <li class="p-b-9">
-              <a href="#" class="s-text7">
-                FAQs
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="w-size8 p-t-30 p-l-15 p-r-15 respon3">
-          <h4 class="s-text12 p-b-30">
-            Newsletter
-          </h4>
-
-          <form>
-            <div class="effect1 w-size9">
-              <input class="s-text7 bg6 w-full p-b-5" type="text" name="email" placeholder="email@example.com">
-              <span class="effect1-line"></span>
-            </div>
-
-            <div class="w-size2 p-t-20">
-              <!-- Button -->
-              <button class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
-                Subscribe
-              </button>
-            </div>
-
-          </form>
-        </div>
-      </div>
 
       <div class="t-center p-l-15 p-r-15">
-        <a href="#">
-          <img class="h-size2" src="images/icons/paypal.png" alt="IMG-PAYPAL">
-        </a>
-
-        <a href="#">
-          <img class="h-size2" src="images/icons/visa.png" alt="IMG-VISA">
-        </a>
-
-        <a href="#">
-          <img class="h-size2" src="images/icons/mastercard.png" alt="IMG-MASTERCARD">
-        </a>
-
-        <a href="#">
-          <img class="h-size2" src="images/icons/express.png" alt="IMG-EXPRESS">
-        </a>
-
-        <a href="#">
-          <img class="h-size2" src="images/icons/discover.png" alt="IMG-DISCOVER">
-        </a>
 
         <div class="t-center s-text8 p-t-20">
           Copyright © 2018 All rights reserved. | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
