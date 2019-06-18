@@ -167,8 +167,9 @@ $result = mysqli_fetch_array($row);
 
 			</div>
 		</div>
-		<a href="pesan.html"><button class="m-l-auto m-r-auto flex-c-m size11 bg1 bo-rad-23 hov1 s-text1 trans-0-4" style="margin-top:20px">Pesan Jasa</button></a>
-
+		<?php 
+			echo "<a href='pesan.php?id=".$result['id']."'><button class='m-l-auto m-r-auto flex-c-m size11 bg1 bo-rad-23 hov1 s-text1 trans-0-4' style='margin-top:20px'>Pesan Jasa</button></a>";
+		?>
 
 		</div>
 	</div>
