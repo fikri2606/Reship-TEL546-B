@@ -1,7 +1,10 @@
+<?php include("config.php"); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Home</title>
+	<title>Ahli Kapal</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -25,11 +28,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/lightbox2/css/lightbox.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -38,19 +37,57 @@
 <body class="animsition">
 
 	<!-- Header -->
-	<header class="header1" style="height:10px">
+	<header class="header1">
 		<!-- Header desktop -->
 		<div class="container-menu-header">
 
 			<div class="wrap_header">
 				<!-- Logo -->
-				<a href="index.html" class="logo">
-					<img src="images/icons/logo.png" alt="IMG-LOGO">
-				</a>
+				<?php
+
+				$id = $_GET['id'];
+
+				echo "<a href='ahlikapal.php?id=$id' class='logo'><img src='images/icons/logo.png' alt='IMG-LOGO'></a>";
+
+				?>
 
 				<!-- Menu -->
+				<div class="wrap_menu">
+					<nav class="menu">
+					</nav>
+				</div>
 
 				<!-- Header Icon -->
+				<div class="header-icons">
+					<div class="header-wrapicon2">
+						<img src="images/icons/icon-header-01.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+
+						<!-- Header cart noti -->
+						<div class="header-cart header-dropdown">
+
+							<div class="header-cart-buttons">
+								<div class="header-cart-wrapbtn">
+									<!-- Button -->
+									<?php
+
+									$id = $_GET['id'];
+
+									echo "<a href='formjasa.php?id=$id'>Lihat Data Diri</a>";
+
+									?>
+
+								</div>
+
+								<div class="header-cart-wrapbtn">
+									<!-- Button -->
+									<a href="index.html" class="header-cart-item-name"style="padding: 10px">
+										Log Out
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -231,95 +268,68 @@
 		</div>
 	</header>
 
-	<!-- Slide1 -->
-	<section class="slide1">
-		<div class="wrap-slick1">
-			<div class="slick1">
-				<div class="item-slick1 item1-slick1" style="height:600px;background-image: url(images/master-slide-02.jpg);">
-					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170" style="padding-top:200px">
-						<span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="fadeInDown">
-							Jasa Perbaikan Kapal
-						</span>
-
-						<h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
-							ReShip
-						</h2>
-
-						<div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="zoomIn">
-							<!-- Button -->
-							<a href="login.php" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-								Login
-							</a><br>
-							<a href="signup.php" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-								Sign Up Now
-							</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="item-slick1 item2-slick1" style="height:600px;background-image: url(images/master-slide-03.jpg);">
-					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170" style="padding-top:200px">
-						<span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="rollIn">
-							Jasa Perbaikan Kapal
-						</span>
-
-						<h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="lightSpeedIn">
-							ReShip
-						</h2>
-
-						<div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="slideInUp">
-							<!-- Button -->
-							<a href="login.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-								Login
-							</a><br>
-							<a href="signup.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-								Sign Up Now
-							</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="item-slick1 item3-slick1" style="height:600px;background-image: url(images/master-slide-04.jpg);">
-					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170" style="padding-top:200px">
-						<span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="rotateInDownLeft">
-							Jasa Perbaikan Kapal
-						</span>
-
-						<h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="rotateInUpRight">
-							ReShip
-						</h2>
-
-						<div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="rotateIn">
-							<!-- Button -->
-							<a href="login.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-								Login
-							</a><br>
-							<a href="signup.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-								Sign Up Now
-							</a>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
+	<!-- Title Page -->
+	<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(images/heading-pages-01.jpg);">
+		<h2 class="l-text2 t-center">
+			Daftar Pemesan
+		</h2>
 	</section>
 
-	<!-- Banner -->
+	<!-- Cart -->
+	<section class="cart bgwhite p-t-70 p-b-100">
+		<div class="container">
+			<!-- Cart item -->
+			<div class="container-table-cart pos-relative">
+				<div class="wrap-table-shopping-cart bgwhite">
+					<table class="table-shopping-cart">
+						<tr class="table-head">
+							<th class="column-2"style="padding-left:30px;">Nama Pemesan</th>
+							<th class="column-1" style="padding-right:30px;">No HP</th>
+							<th class="column-6">Alamat</th>
+							<th class="column-7">Status</th>
+						</tr>
 
-	<!-- New Product -->
+						<tr class="table-row">
 
-	<!-- Banner2 -->
+							 <td class="column-2" style="padding-left:30px;">Lala</td>
+
+							<td class="column-1" style="padding-right:30px;">0814-2020-2020</td>
+							<td class="column-6">Jalan sutomo nomor 231 pematang raya kabupaten simalungun provinsi sumatera  utara</td>
+							<td class="column-7" >Waiting</td>
+							<td class="" style="padding-right:30px; Width:150px;"><a href="detail-pemesan.html"><button class="flex-c-m size4 bg7 bo-rad-15 hov1 s-text14 trans-0-4">
+								Lihat
+							</button></a></td>
+						</tr>
+
+						<tr class="table-row">
+							<td class="column-2" style="padding-left:30px;">dalang</td>
+							<td class="column-1" style="padding-right:30px;">0821-1122-1122</td>
+							<td class="column-6">Pocut baren banda aceh</td>
+							<td class="column-7">Waiting</td>
+							<td class="" style="padding-right:30px; Width:150px;"><a href="detail-pemesan.html"><button class="flex-c-m size4 bg7 bo-rad-15 hov1 s-text14 trans-0-4">
+								Lihat
+							</button></a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
 
 
-	<!-- Blog -->
+			<!-- Total -->
+	</section>
 
-	<!-- Instagram -->
-
-	<!-- Shipping -->
 
 
 	<!-- Footer -->
+	<footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">
+
+		<div class="t-center p-l-15 p-r-15">
+
+			<div class="t-center s-text8 p-t-20">
+				Copyright © 2018 All rights reserved. | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+			</div>
+		</div>
+	</footer>
 
 
 
@@ -330,8 +340,9 @@
 		</span>
 	</div>
 
-	<!-- Container Selection1 -->
+	<!-- Container Selection -->
 	<div id="dropDownSelect1"></div>
+	<div id="dropDownSelect2"></div>
 
 
 
@@ -349,32 +360,12 @@
 			minimumResultsForSearch: 20,
 			dropdownParent: $('#dropDownSelect1')
 		});
-	</script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
-	<script type="text/javascript" src="js/slick-custom.js"></script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/lightbox2/js/lightbox.min.js"></script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
-	<script type="text/javascript">
-		$('.block2-btn-addcart').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to cart !", "success");
-			});
-		});
 
-		$('.block2-btn-addwishlist').each(function(){
-			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
-			});
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect2')
 		});
 	</script>
-
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
 
